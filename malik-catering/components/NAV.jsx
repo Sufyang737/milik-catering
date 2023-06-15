@@ -2,8 +2,8 @@ import React from 'react'
 
 const nav = () => {
   return (
-    <header className='w-screen h-1/5 bg-amber-700'>
-      <div className='bg-green-500 w-full h-1/5 flex items-center justify-center gap-4'>
+    <header className='w-screen h-28 border-b-white border-b'>
+      <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
         <p className=''>
           Entregas de lunes a sabado
         </p>
@@ -12,14 +12,14 @@ const nav = () => {
           20% de descuento a partir de $20000
         </p>
       </div>
-      <nav className='px-20 w-screen h-3/4 flex flex-row items-center justify-around bg-red-400 '>
+      <nav className='px-36 w-screen h-3/5 grid grid-cols-3 gap- items-center bg-neutral-800 '>
         <h1 className=''>MALIK</h1>
-        <ul className='w-96 flex flex-row items-center justify-between bg-blue-500'>
-          <li className=''>mercadito</li>
-          <li className=''>armá tu box</li>
-          <li className=''>box-armados</li>
+        <ul className='bg-slate-100 w-96 px-3 py-2 rounded-2xl flex flex-row items-center justify-center gap-4 text-black font-bold'>
+          <li className=''><a href="#">mercadito</a></li>
+          <li className=''><a href="#">armá tu box</a></li>
+          <li className=''><a href="#">box-armados</a></li>
         </ul>
-        <div className='flex flex-row'>
+        <div className='flex flex-row justify-center gap-16'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
