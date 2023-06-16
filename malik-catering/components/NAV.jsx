@@ -2,7 +2,7 @@ import React from 'react'
 
 const nav = () => {
   return (
-    <header className='w-screen h-28 border-b-white border-b'>
+    <header className='w-screen h-[15vh] border-b-white border-b'>
       <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
         <p className=''>
           Entregas de lunes a sabado
