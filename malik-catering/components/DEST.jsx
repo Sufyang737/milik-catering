@@ -2,7 +2,9 @@ import React from 'react'
 
 const DEST = () => {
   return (
-    <div>DEST</div>
+    <section className='w-screen h-[50vh] bg-neutral-800'>
+
+    </section>
   )
 }
 
