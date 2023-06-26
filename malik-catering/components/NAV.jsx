@@ -1,6 +1,6 @@
 import React from 'react'
 
-const nav = () => {
+const Nav = () => {
   return (
     <header className='w-screen h-[15vh] '>
       <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
@@ -33,4 +33,4 @@ const nav = () => {
   )
 }
 
-export default nav
+export default Nav

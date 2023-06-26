@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-const HERO = () => {
+const Hero = () => {
   return (
     <section className="w-screen h-[85vh] bg-neutral-800 flex items-center justify-center ">
       <div className='w-3/5 p-24 flex flex-col items-center gap-12 text-4xl text-white'>
@@ -14,4 +14,4 @@ const HERO = () => {
   )
 }
 
-export default HERO
+export default Hero
