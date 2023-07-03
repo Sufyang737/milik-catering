@@ -3,7 +3,8 @@ import Hero from '../components/Hero'
 import Div from '../components/Div.jsx'
 import Especial from '../components/Especial.jsx'
 import Dest from '../components/Dest.jsx'
-
+import Footer from '../components/Footer.jsx'
+import Comprar from '../components/Comprar.jsx'
 
 import { Inter } from 'next/font/google'
 
@@ -17,7 +18,10 @@ export default function Home() {
       <Hero/>
       <Div/>
       <Especial/>
-      <Dest/>s
+      <Dest/>
+      <Div/>
+      <Footer/>
+      <Comprar/>
      
 
     </div>
