@@ -1,25 +1,12 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import { useSession, signIn, signOut } from "next-auth/react"
-import Nav from '@/components/nav'
-const inter = Inter({ subsets: ['latin'] })
+import Layaout from "@/components/layaout";
+import { useSession } from "next-auth/react";
 
-export default function Home() {
-  const { data: session } = useSession()
-  if(!session){
-    return (
-      <div className="bg-blue-900 h-screen w-screen flex items-center">
-        <div clasName="text-center w-full">
-          <button className="bg-white p-2 rounded-lg px-4" onClick={() => signIn('google')}>Login con google</button>
-        </div>
-      </div>
-    )
-  }
-  
-  return(
-    <div className="bg-blue-900 min-h-screen">
-      <Nav/>
-      <div>logged in {session.user.email}</div>
+export default function Home(){
+  const {data: session} = useSession();
+  console.log({session});
+  return <Layaout>
+    <div className="text-black flex">
+        <h1>Hola!, <b>{session?.user?.name}</b></h1>
     </div>
-  );
+  </Layaout>
 }
