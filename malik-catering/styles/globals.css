@@ -22,3 +22,28 @@ label{
 .btn-primary{
     @apply bg-green-700 text-white py-1 px-4 rounded-md;
 }
+
+
+table.basic{
+    @apply w-full;
+}
+
+table.basic thead tr td{
+    @apply bg-blue-400;
+}
+
+table.basic tr td {
+    @apply border border-gray-300 p-2;
+}
+
+table.basic a{
+    @apply bg-green-800 text-white text-sm py-1 px-2 rounded-md inline-flex gap-1 mr-3;
+}
+
+.btn-red{
+    @apply bg-red-800 text-white text-sm py-3 px-5 rounded-md;
+}
+
+.btn-green{
+    @apply bg-green-800 text-white text-sm py-3 px-5 rounded-md;
+}
