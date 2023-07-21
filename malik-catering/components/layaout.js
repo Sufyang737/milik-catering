@@ -7,7 +7,7 @@ export default function Layaout({children}) {
   if(!session){
     return (
       <div className="bg-blue-900 h-screen w-screen flex items-center">
-        <div clasName="text-center w-full">
+        <div clasName="text-center justify-center w-full">
           <button className="bg-white p-2 rounded-lg px-4" onClick={() => signIn('google')}>Login con google</button>
         </div>
       </div>

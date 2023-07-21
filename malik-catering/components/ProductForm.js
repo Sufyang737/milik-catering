@@ -1,20 +1,20 @@
-import Layaout from "@/components/layaout";
 import axios from "axios";
-import { redirect } from "next/dist/server/api-utils";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Spinner from "./Spinner";
+
 import { ReactSortable } from "react-sortablejs";
-export default function ProductForm({_id,title:exitingTitle, description:existingDescription, price:exitingPrice,images:existingImages,category:assignedCategory}){
-    const [title, setTitle] = useState(exitingTitle ||'');
-    const [images, setImages] = useState(existingImages||[]);
+export default function ProductForm({ _id, title: existingTitle, description: existingDescription, price: existingPrice,images:existingImages,category:assignedCategory, properties:assignedProperties,}){
+    const [title, setTitle] = useState(existingTitle || '');
+    const [description, setDescription] = useState(existingDescription || '');
     const [category, setCategory] = useState(assignedCategory || '');
-    const [description, setDescription] = useState( existingDescription ||'');
-    const [price, setPrice] = useState( exitingPrice || '');
+    const [productProperties, setProductProperties] = useState(assignedProperties || {});
+    const [price, setPrice] = useState(existingPrice || '');
+    const [images, setImages] = useState(existingImages || []);
     const [goToProducts, setGoToProducts] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [categories, setCategories] = useState([]);
     const router = useRouter();
-    const [categories, setCategories] = useState([])
     useEffect(() =>{
         axios.get('/api/categories').then(result =>{
             setCategories(result.data);
@@ -22,7 +22,7 @@ export default function ProductForm({_id,title:exitingTitle, description:existin
     }, [])
     async function saveProduct(ev){
         ev.preventDefault();
-        const data = {title, description, price, images, category};
+        const data = {title, description, price, images, category, properties:productProperties};
         if (_id){
             await axios.put('/api/products', {...data, _id})
         }
@@ -55,6 +55,32 @@ export default function ProductForm({_id,title:exitingTitle, description:existin
         setImages(images)
     }
 
+    function setProductProp(propName, value){
+        setProductProperties(prev => {
+            const newProductProps = {...prev};
+            newProductProps[propName] = value;
+            return newProductProps;
+        })
+    }
+
+    const propertiesToFill = [];
+    if (categories.length > 0 && category) {
+        let catInfo = categories.find(({ _id }) => _id === category);
+        if (catInfo && catInfo.properties) {
+            propertiesToFill.push(...catInfo.properties);
+            while (catInfo?.parent?._id) {
+                const parentCat = categories.find(({ _id }) => _id === catInfo?.parent?._id);
+                if (parentCat && parentCat.properties) {
+                    propertiesToFill.push(...parentCat.properties);
+                    catInfo = parentCat;
+                } else {
+                    break; // Salimos del ciclo while si no se encuentra una categoría padre válida.
+                }
+            }
+        }
+    }
+
+
     return(
             <form onSubmit={saveProduct}>
                 <label>Nombre del producto</label>
@@ -66,6 +92,21 @@ export default function ProductForm({_id,title:exitingTitle, description:existin
                         <option  value={c._id}>{c.name}</option>
                     ))}
                 </select>
+            {propertiesToFill.length > 0 && propertiesToFill.map(p => (
+                <div key={p.name} className="">
+                    <label>{p.name[0].toUpperCase() + p.name.substring(1)}</label>
+                    <div>
+                        <select value={productProperties[p.name]}
+                            onChange={ev =>
+                                setProductProp(p.name, ev.target.value)
+                        }>
+                            {p.values.map(v => (
+                                <option key={v} value={v}>{v}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+            ))}
                 <label>Fotos</label>
                 <div className="mb-2 flex flex-wrap gap-2">
                 <ReactSortable list={images} className="flex flex-wrap gap-1" setList={uploadImagesOrder}>
