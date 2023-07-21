@@ -1,21 +1,28 @@
 import Layaout from "@/components/layaout";
 import axios from "axios";
 import { redirect } from "next/dist/server/api-utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Spinner from "./Spinner";
 import { ReactSortable } from "react-sortablejs";
-export default function ProductForm({_id,title:exitingTitle, description:existingDescription, price:exitingPrice,images:existingImages,}){
+export default function ProductForm({_id,title:exitingTitle, description:existingDescription, price:exitingPrice,images:existingImages,category:assignedCategory}){
     const [title, setTitle] = useState(exitingTitle ||'');
     const [images, setImages] = useState(existingImages||[]);
+    const [category, setCategory] = useState(assignedCategory || '');
     const [description, setDescription] = useState( existingDescription ||'');
     const [price, setPrice] = useState( exitingPrice || '');
     const [goToProducts, setGoToProducts] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const router = useRouter();
+    const [categories, setCategories] = useState([])
+    useEffect(() =>{
+        axios.get('/api/categories').then(result =>{
+            setCategories(result.data);
+        })
+    }, [])
     async function saveProduct(ev){
         ev.preventDefault();
-        const data = {title, description, price, images};
+        const data = {title, description, price, images, category};
         if (_id){
             await axios.put('/api/products', {...data, _id})
         }
@@ -52,6 +59,13 @@ export default function ProductForm({_id,title:exitingTitle, description:existin
             <form onSubmit={saveProduct}>
                 <label>Nombre del producto</label>
                 <input type="text" placeholder="Nombre del producto" value={title} onChange={ev => setTitle(ev.target.value)}/>
+                <label>Categoria</label>
+                <select value={category} onChange={ev => setCategory(ev.target.value)}>
+                    <option value="">Seleccione una categoria</option>
+                    {categories.length > 0 && categories.map(c => (
+                        <option  value={c._id}>{c.name}</option>
+                    ))}
+                </select>
                 <label>Fotos</label>
                 <div className="mb-2 flex flex-wrap gap-2">
                 <ReactSortable list={images} className="flex flex-wrap gap-1" setList={uploadImagesOrder}>
