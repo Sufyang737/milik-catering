@@ -27,8 +27,8 @@ export default function DeletProductPage(){
         <Layaout>
             <h1 className="text-center">Realmente quieres eliminiar el producto &nbsp;{productInfo?.title}</h1>
             <div className="flex gap-2 justify-center">
-            <button className="btn-red" onClick={deleteProduct}>Si eliminar</button>
             <button className="btn-green" onClick={goBack} >No eliminar</button>
+            <button className="btn-red" onClick={deleteProduct}>Si eliminar</button>
             </div>
         </Layaout>
     )
