@@ -3,21 +3,21 @@ import Cartprod from './Cartprod'
 
 const Cart = () => {
   return (
-    <div className='h-screen w-1/4 bg-red-500 flex flex-col justify-between items-center'>
-      <div className='w-full'> 
+    <div className='h-screen w-1/4 flex flex-col justify-center items-center border-2 '>
+      <div className='w-full h-4/6 overflow-y-auto'> 
         <Cartprod/>
       </div>
-      <div className='bg-green-500 w-full h-1/4 p-4 flex flex-col justify-evenly items-center'>
-        <ul className='w-full h-1/2'>
-          <li className='border-b-2 flex justify-between text-2xl py-2'>Subtotal <span>$0</span></li>
-          <li className='flex justify-between text-4xl py-6'>Total <span>$0</span></li>
+      <div className='w-full h-2/6 p-4 flex flex-col justify-around items-center'>
+        <ul className='w-full'>
+          <li className='border-b-2 flex justify-between text-xl py-2'>Subtotal <span>$0</span></li>
+          <li className='flex justify-between text-3xl py-6'>Total <span>$0</span></li>
         </ul>
-        <button className='bg-white text-black w-2/5 h-10'>FINALIZAR COMPRA</button>
-        <div>
-         
-        </div>
+        <button className='bg-white text-black text-sm w-5/12 h-10 font-bold'>FINALIZAR COMPRA</button>
+        <ul className='flex flex-col justify-center gap-4 items-center text-xs'>
+          <li>Seguir comprando</li>
+          <li>Los costo de envío lo verás aplicado en el checkout</li>
+        </ul>
       </div>
-      
     </div>
   )
 }
