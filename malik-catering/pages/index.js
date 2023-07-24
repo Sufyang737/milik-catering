@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='w-screen bg-neutral-800'>
+    <div className='w-full bg-neutral-800'>
       <Nav/>
       <Div/>
       <Hero/>
@@ -23,7 +23,6 @@ export default function Home() {
       <Div/>
       <Footer/>
       <Comprar/>
-      <Cart/>
 
     </div>
   )

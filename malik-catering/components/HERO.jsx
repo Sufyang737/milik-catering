@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const Hero = () => {
   return (
-    <section className="w-screen h-[85vh] bg-neutral-800 flex items-center justify-center ">
+    <section className="w-full h-[85vh] bg-neutral-800 flex items-center justify-center ">
       <div className='w-3/5 p-24 flex flex-col items-center gap-12 text-4xl text-white'>
         <h2 className='w-2/3'>Déjanos la <strong className='text-yellow-500 font-bold'>cocina</strong> a nuestras manos y <strong className='text-yellow-500 font-bold'>disfruta del momento.</strong>
         </h2>

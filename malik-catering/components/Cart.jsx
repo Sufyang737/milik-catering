@@ -3,7 +3,7 @@ import Cartprod from './Cartprod'
 
 const Cart = () => {
   return (
-    <div className='h-screen w-1/4 flex flex-col justify-center items-center border-2 '>
+    <div className='absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-neutral-800'>
       <div className='w-full h-4/6 overflow-y-auto'> 
         <Cartprod/>
       </div>
