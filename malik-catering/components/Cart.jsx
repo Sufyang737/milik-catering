@@ -1,9 +1,11 @@
 import React from 'react'
 import Cartprod from './Cartprod'
 
-const Cart = () => {
+const Cart = (props) => {
+  const activeMenu = 'absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-neutral-800'
+  const inactiveMenu = 'absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-red-800'
   return (
-    <div className='absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-neutral-800'>
+    <div className={props.display ? activeMenu : inactiveMenu}>
       <div className='w-full h-4/6 overflow-y-auto'> 
         <Cartprod/>
       </div>
