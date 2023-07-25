@@ -1,11 +1,9 @@
 import React from 'react'
 import Cartprod from './Cartprod'
 
-const Cart = (props) => {
-  const visibleMenu = 'opacity-100 visible absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-neutral-800 transition-all ease-in-out duration-150' 
-  const hiddenMenu = 'opacity-0 invisible absolute top-36 right-0 h-[85vh] w-1/4 border-2 transition-all ease-in-out duration-150'
+const Cart = () => {
   return (
-    <div className={props.display ? visibleMenu : hiddenMenu }>
+    <div className='absolute top-36 right-0 h-[85vh] w-1/4 flex flex-col justify-center items-center border-2 bg-neutral-800'>
       <div className='w-full h-4/6 overflow-y-auto'> 
         <Cartprod/>
       </div>
