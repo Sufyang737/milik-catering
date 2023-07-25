@@ -4,7 +4,6 @@ import Link from 'next/link.js';
 
 const Nav = () => {
   const [Menu, setMenu] = React.useState(false);
-
   return (
     <header className='w-full h-[15vh]'>
       <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
