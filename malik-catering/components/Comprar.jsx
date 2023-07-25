@@ -1,7 +1,6 @@
-import React from "react";
 import Image from "next/image";
 
-const Comprar = () => {
+export default function Comprar(){
   return (
     <section className="w-full h-screen p-48 flex items-center ">
       <div className="w-2/5 h-full flex flex-col gap-10 items-center justify-center">
@@ -41,5 +40,3 @@ const Comprar = () => {
     </section>
   );
 };
-
-export default Comprar;
