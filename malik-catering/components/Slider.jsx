@@ -2,19 +2,23 @@ import React, { useState } from "react";
 import Product from "./Product";
 
 let sliderCount = 0
+let sliderPercent = 0
 
 const Slider = () => {
-  const [Translate, setTranslate] = useState('w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[0%]')
+  // const [Translate, setTranslate] = useState('w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[' + sliderPercent + '%]')
 
+  
   const handleClickRight = ()=>{
-    if (sliderCount > 2 ){
-      setTranslate('w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[0%]')
+    if (sliderCount > 1 ){
+      sliderPercent = 0
       sliderCount = 0
     }else {
-      setTranslate('w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[50%]')
-      sliderCount++
+      sliderPercent = sliderPercent + 15
+      sliderCount = sliderCount + 1
     }
+    console.log(sliderPercent)
   }
+
 
   const handleClickLeft = ()=>{
     setTranslate()
@@ -25,7 +29,7 @@ const Slider = () => {
   
   return (
     <div className="h-full overflow-hidden">
-      <div className={Translate}>
+      <div className={'w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[' + sliderPercent + '%]'}>
         <Product />
         <Product />
         <Product />
@@ -33,7 +37,7 @@ const Slider = () => {
         <Product />
         <Product />
       </div>
-      <button className="absolute bg-white -translate-y-[500%] -translate-x-[100%]" >
+      <button className="absolute bg-white -translate-y-[500%] -translate-x-[100%]"  >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="black"
@@ -49,7 +53,7 @@ const Slider = () => {
           />
         </svg>
       </button>
-      <button className="absolute bg-white -translate-y-[500%] translate-x-[3000%]" onClick={handleClickRight()}>
+      <button className="absolute bg-white -translate-y-[500%] translate-x-[3000%]" onClick={handleClickRight}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="black"
