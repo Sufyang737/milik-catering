@@ -23,7 +23,7 @@ const Cartprod = () => {
             className="w-3/5 text-center outline-0"
             type="text"
             name="quantity"
-            value="0"
+            
           />
           <input className="" type="button" value="+" field="quantity" />
         </form>

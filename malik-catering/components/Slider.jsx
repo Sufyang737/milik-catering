@@ -1,35 +1,42 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Product from "./Product";
 
 let sliderCount = 0
 let sliderPercent = 0
-
+const sliderWrap = useRef();
+console.log(sliderWrap)
 const Slider = () => {
   // const [Translate, setTranslate] = useState('w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[' + sliderPercent + '%]')
 
   
+  // const handleClickRight = ()=>{
+  //   if (sliderCount > 1 ){
+  //     sliderPercent = 0
+  //     sliderCount = 0
+  //   }else {
+  //     sliderPercent = sliderPercent + 15
+  //     sliderCount = sliderCount + 1
+  //   }
+  //   console.log(sliderPercent)
+  // }
+
+
+  // const handleClickLeft = ()=>{
+  //   setTranslate()
+  //   sliderCount--
+  // }
+
   const handleClickRight = ()=>{
-    if (sliderCount > 1 ){
-      sliderPercent = 0
-      sliderCount = 0
-    }else {
-      sliderPercent = sliderPercent + 15
+    if(sliderCount = 0){
+      sliderWrap.classList.add('-translate-x-[25%]')
       sliderCount = sliderCount + 1
     }
-    console.log(sliderPercent)
   }
-
-
-  const handleClickLeft = ()=>{
-    setTranslate()
-    sliderCount--
-  }
-
 
   
   return (
     <div className="h-full overflow-hidden">
-      <div className={'w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 translate-x-[' + sliderPercent + '%]'}>
+      <div className={'w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 '} ref={sliderWrap}>
         <Product />
         <Product />
         <Product />

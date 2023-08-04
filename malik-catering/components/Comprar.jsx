@@ -26,7 +26,7 @@ export default function Comprar(){
               value="-"
               field="quantity"
             />
-            <input className="w-3/5 text-center outline-0" type="text" name="quantity" value="0"/>
+            <input className="w-3/5 text-center outline-0" type="text" name="quantity" />
             <input
               className=""
               type="button"
