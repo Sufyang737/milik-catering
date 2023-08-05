@@ -8,7 +8,7 @@ const Dest = () => {
         <h3>PRODUCTOS DESTACADOS</h3>
         <button><a href="#">VER MÁS</a></button>
       </div>
-      <div className='h-full overflow-hidden'>
+      <div className='h-full'>
         <Slider/>
       </div>
            
