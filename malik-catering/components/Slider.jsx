@@ -3,6 +3,8 @@ import Product from "./Product";
 
 const Slider = () => {
   const [sliderCount, setSliderCount] = useState(0);
+  
+
   const sliderWrap = useRef();
 
   const handleClickRight = () => {

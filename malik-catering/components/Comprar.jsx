@@ -44,15 +44,15 @@ export default function Comprar(){
             <input
               className="cursor-pointer"
               type="button"
-              value="-"
+              defaultValue="-"
               field="quantity"
               onClick={handleClickRemove}
             />
-            <input className="w-3/5 text-center outline-0" type="number" name="quantity" value={ProductQuantity}/>
+            <input className="w-3/5 text-center outline-0 " type="number" name="quantity" defaultValue={ProductQuantity} />
             <input
               className="cursor-pointer"
               type="button"
-              value="+"
+              defaultValue="+"
               field="quantity"
               onClick={handleClickAdd}
             />

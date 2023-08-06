@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { useEffect , useState , useRef } from 'react'
 import Cart from './Cart.jsx'
+
 const Nav = () => {
   const [Menu, setMenu] = React.useState(false)
+  // const [navSlider, setnavSlider] = useState(false)
+
+  // const navSliderTop = useRef()
+  // const navSliderBot = useRef()
   const handleClick = ()=>{
     setMenu(!Menu)
   }
+
+  // setTimeout(()=>{
+  //   setnavSlider(!navSlider)
+  // },1000)
+  
+  // useEffect(() => {
+  //   navSliderTop.current.classList.toggle('translate-y-24')
+  //   navSliderBot.current.classList.toggle('translate-y-0')
+  // }, [navSlider])
+  
   return (
     <header className='w-full h-[15vh] '>
-      <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
-        <p className=''>
+      <div className='bg-green-500 w-full h-2/5 flex flex-col items-center justify-center'>
+        <p className='translate-y-0' ref={navSliderTop}>
           Entregas de <strong>lunes a sabado</strong>
         </p>
-        <span>|</span>
-        <p className=''>
+        <p className='translate-y-24' ref={navSliderBot}>
           <strong>20%</strong> de descuento a partir de <strong>$20000</strong>
         </p>
       </div>
-      <nav className='px-36 w-full h-3/5 flex justify-between items-center bg-neutral-800 '>
+      <nav className='px-36 w-full h-3/5 flex justify-between items-center bg-neutral-800'>
         <h1 className=''>MALIK</h1>
         <ul className='bg-slate-100 w-96 px-3 py-2 rounded-2xl flex flex-row items-center justify-center gap-4 text-black font-bold'>
           <li className=''><a href="#">mercadito</a></li>
