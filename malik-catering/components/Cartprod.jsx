@@ -1,6 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import { useState } from "react";
 const Cartprod = () => {
+
+  const [ProductQuantity, setProductQuantity] = useState(0);
+
+
+  const handleClickAdd = () => {
+    
+    setProductQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleClickRemove = () => {
+    if (ProductQuantity > 0) {
+      setProductQuantity((prevQuantity) => prevQuantity - 1);
+    } else {
+      return;
+    }
+  };
+
   return (
     <div className="w-full h-32 flex justify-evenly items-center border-b-2">
       <Image
@@ -18,14 +36,14 @@ const Cartprod = () => {
           id="myform"
           action="#"
         >
-          <input className="" type="button" value="-" field="quantity" />
+          <input className="cursor-pointer" type="button" value="-" field="quantity" onClick={handleClickRemove}/>
           <input
             className="w-3/5 text-center outline-0"
-            type="text"
+            type="number"
             name="quantity"
-            
+            value={ProductQuantity}            
           />
-          <input className="" type="button" value="+" field="quantity" />
+          <input className="cursor-pointer" type="button" value="+" field="quantity" onClick={handleClickAdd} />
         </form>
       </div>
       <div className="flex flex-col justify-center gap-4 items-end">

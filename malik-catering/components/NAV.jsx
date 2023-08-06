@@ -9,11 +9,11 @@ const Nav = () => {
     <header className='w-full h-[15vh] '>
       <div className='bg-green-500 w-full h-2/5 flex items-center justify-center gap-4'>
         <p className=''>
-          Entregas de lunes a sabado
+          Entregas de <strong>lunes a sabado</strong>
         </p>
         <span>|</span>
         <p className=''>
-          20% de descuento a partir de $20000
+          <strong>20%</strong> de descuento a partir de <strong>$20000</strong>
         </p>
       </div>
       <nav className='px-36 w-full h-3/5 flex justify-between items-center bg-neutral-800 '>

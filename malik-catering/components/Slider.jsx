@@ -7,15 +7,11 @@ const Slider = () => {
 
   const handleClickRight = () => {
     if (sliderCount === 0) {
-      sliderWrap.current.classList.remove("-translate-x-[0%]")
+      sliderWrap.current.classList.remove("-translate-x-[0%]");
       sliderWrap.current.classList.add("-translate-x-[50%]");
       setSliderCount(1);
-    }else if(sliderCount === 1){
+    } else if (sliderCount === 1) {
       sliderWrap.current.classList.remove("-translate-x-[50%]");
-      sliderWrap.current.classList.add("-translate-x-[100%]");
-      setSliderCount(2);
-    }else if(sliderCount ===2){
-      sliderWrap.current.classList.remove("-translate-x-[100%]");
       sliderWrap.current.classList.add("-translate-x-[0%]");
       setSliderCount(0);
     }
@@ -23,17 +19,13 @@ const Slider = () => {
 
   const handleClickLeft = () => {
     if (sliderCount === 0) {
-      sliderWrap.current.classList.remove("-translate-x-[0%]")
-      sliderWrap.current.classList.add("-translate-x-[100%]");
-      setSliderCount(2);
-    }else if(sliderCount === 1){
-      sliderWrap.current.classList.remove("-translate-x-[50%]")
-      sliderWrap.current.classList.add("-translate-x-[0%]");
-      setSliderCount(0);
-    }else if(sliderCount ===2){
-      sliderWrap.current.classList.remove("-translate-x-[100%]")
+      sliderWrap.current.classList.remove("-translate-x-[0%]");
       sliderWrap.current.classList.add("-translate-x-[50%]");
       setSliderCount(1);
+    } else if (sliderCount === 1) {
+      sliderWrap.current.classList.remove("-translate-x-[50%]");
+      sliderWrap.current.classList.add("-translate-x-[0%]");
+      setSliderCount(0);
     }
   };
   // const handleClickRight = ()=>{
@@ -55,7 +47,14 @@ const Slider = () => {
   return (
     <div className="relative h-full">
       <div className="h-full overflow-hidden">
-        <div className={"w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all"} ref={sliderWrap}>
+        <div
+          className={
+            "w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all"
+          }
+          ref={sliderWrap}
+        >
+          <Product />
+          <Product />
           <Product />
           <Product />
           <Product />
@@ -76,7 +75,7 @@ const Slider = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
           />
         </svg>
       </button>
@@ -92,7 +91,7 @@ const Slider = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
           />
         </svg>
       </button>
