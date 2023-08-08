@@ -12,7 +12,7 @@ const Cart = (props) => {
       <div className='w-full h-2/6 p-4 flex flex-col justify-around items-center'>
         <ul className='w-full'>
           <li className='border-b-2 flex justify-between text-xl py-2'>Subtotal <span>$0</span></li>
-          <li className='flex justify-between text-3xl py-6'>Total <span>$0</span></li>
+          <li className='flex justify-between text-3xl font-bold py-6'>Total <span>$0</span></li>
         </ul>
         <button className='bg-white text-black text-sm w-5/12 h-10 font-bold'>FINALIZAR COMPRA</button>
         <ul className='flex flex-col justify-center gap-4 items-center text-xs'>

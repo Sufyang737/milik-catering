@@ -5,7 +5,7 @@ import Especial from '../components/Especial.jsx'
 import DEST from '../components/DEST.js'
 import Footer from '../components/Footer.jsx'
 import Comprar from '../components/Comprar.jsx'
-import Cart from '../components/Cart.jsx'
+import Checkout from '../components/Checkout.jsx'
 
 
 import PRODUCT from '@/components/Product';
@@ -25,7 +25,7 @@ export default function Home() {
       <Div />
       <Footer />
       <Comprar />
-
+      <Checkout/>
     </div>
   )
 }

@@ -22,13 +22,15 @@ const Nav = () => {
   
   return (
     <header className='w-full h-[15vh] '>
-      <div className='bg-green-500 w-full h-2/5 flex flex-col items-center justify-center'>
-        <p className='translate-y-0' ref={navSliderTop}>
-          Entregas de <strong>lunes a sabado</strong>
-        </p>
-        <p className='translate-y-24' ref={navSliderBot}>
-          <strong>20%</strong> de descuento a partir de <strong>$20000</strong>
-        </p>
+      <div className='bg-green-500 w-full h-2/5 overflow-hidden'>
+        <div className='h-full w-full flex flex-col items-center justify-center translate-y-12'>
+          <p className=''>
+            Entregas de <strong>lunes a sabado</strong>
+          </p>
+          <p className=''>
+            <strong>20%</strong> de descuento a partir de <strong>$20000</strong>
+          </p>
+        </div>
       </div>
       <nav className='px-36 w-full h-3/5 flex justify-between items-center bg-neutral-800'>
         <h1 className=''>MALIK</h1>
