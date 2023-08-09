@@ -8,8 +8,6 @@ import Comprar from '../components/Comprar.jsx'
 import Checkout from '../components/Checkout.jsx'
 
 
-import PRODUCT from '@/components/Product';
-
 
 
 export default function Home() {
@@ -26,6 +24,7 @@ export default function Home() {
       <Footer />
       <Comprar />
       <Checkout/>
+    
     </div>
   )
 }

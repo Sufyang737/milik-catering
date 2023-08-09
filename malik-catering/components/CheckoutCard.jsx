@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const CheckoutCard = () => {
   return (
-    <div className=''>
+    <div className='py-6'>
       <div className='flex justify-between px-6'>
         <div className='flex flex-col justify-start gap-4'>
           <div className='text-2xl'>Producto</div>
