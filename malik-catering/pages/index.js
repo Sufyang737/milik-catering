@@ -11,6 +11,7 @@ import Cart from '../components/Cart.jsx'
 import PRODUCT from '@/components/Product';
 import { Product } from '@/models/Product.js';
 import { mongooseConnect } from '@/lib/mongoose.js';
+import Checkout from '@/components/Checkout.jsx';
 
 
 
@@ -26,6 +27,7 @@ export default function Home({ featuredProduct }) {
       <DEST product={featuredProduct}/>
       <Div />
       <Footer />
+      <Checkout></Checkout>
     </div>
   )
 }

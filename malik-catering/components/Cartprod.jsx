@@ -7,7 +7,7 @@ const Cartprod = () => {
 
 
   const handleClickAdd = () => {
-
+    
     setProductQuantity((prevQuantity) => prevQuantity + 1);
   };
 
@@ -36,14 +36,14 @@ const Cartprod = () => {
           id="myform"
           action="#"
         >
-          <input className="cursor-pointer" type="button" value="-" field="quantity" onClick={handleClickRemove} />
+          <input className="cursor-pointer" type="button" defaultValue="-" field="quantity" onClick={handleClickRemove}/>
           <input
             className="w-3/5 text-center outline-0"
             type="number"
             name="quantity"
-            value={ProductQuantity}
+            defaultValue={ProductQuantity}        
           />
-          <input className="cursor-pointer" type="button" value="+" field="quantity" onClick={handleClickAdd} />
+          <input className="cursor-pointer" type="button" defaultValue="+" field="quantity" onClick={handleClickAdd} />
         </form>
       </div>
       <div className="flex flex-col justify-center gap-4 items-end">
