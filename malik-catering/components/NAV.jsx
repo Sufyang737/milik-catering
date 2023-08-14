@@ -4,32 +4,23 @@ import Cart from './Cart.jsx'
 
 const Nav = () => {
   const [Menu, setMenu] = React.useState(false)
-  const searchbar = useRef()
+  const [searchbarStyle, setsearchbarStyle] = useState(false)
+  // const searchbar = useRef()
 
-  // const [navSlider, setnavSlider] = useState(false)
-
-  // const navSliderTop = useRef()
-  // const navSliderBot = useRef()
   const handleClick = ()=>{
     setMenu(!Menu)
   }
 
   const handleSearchClick = ()=>{
-    searchbar.current.classList.toggle('bg-transparent')
-    searchbar.current.classList.toggle('w-0')
+    // searchbar.current.classList.toggle('bg-transparent')
+    // searchbar.current.classList.toggle('w-0')
 
 
-    searchbar.current.classList.toggle('bg-neutral-900')
-    searchbar.current.classList.toggle('w-48')
+    // searchbar.current.classList.toggle('bg-neutral-900')
+    // searchbar.current.classList.toggle('w-48')
+    setsearchbarStyle(!searchbarStyle)
   }
-  // setTimeout(()=>{
-  //   setnavSlider(!navSlider)
-  // },1000)
-  
-  // useEffect(() => {
-  //   navSliderTop.current.classList.toggle('translate-y-24')
-  //   navSliderBot.current.classList.toggle('translate-y-0')
-  // }, [navSlider])
+
   
   return (
     <header className='w-full h-[15vh] '>
@@ -52,9 +43,9 @@ const Nav = () => {
         </ul>
         <div className='flex flex-row justify-center gap-16'>
           <div className='search-box relative'>
-            <input type="text" className='bg-transparent text-white w-0 h-6 pr-10 pl-2 outline-none absolute right-0 rounded-xl transition-all duration-500' ref={searchbar} placeholder=""></input>
+            <input type="text" className={`${searchbarStyle ? 'bg-slate-100' : 'bg-transparent'} text-black ${searchbarStyle ? 'w-48' : 'w-0'} h-6 pr-10 pl-2 outline-none absolute right-0 rounded-xl transition-all duration-500 ease-out`}  placeholder=""></input>
             <button className='absolute right-[.5rem]' onClick={handleSearchClick}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-6 h-6  transition-all duration-500 ease-out ${searchbarStyle ? 'stroke-black' : 'stroke-white'}`}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </button>
