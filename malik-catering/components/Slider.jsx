@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Product from "./Product";
 
-const Slider = () => {
+const Slider = (props) => {
   const [sliderCount, setSliderCount] = useState(0);
   
 

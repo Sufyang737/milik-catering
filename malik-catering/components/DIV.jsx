@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Div = () => {
+const Div = (props) => {
   return (
-    <div className='w-full h-1 bg-white'></div>
+    <div className={`w-full h-1 ${props.theme ? 'bg-slate-100' : 'bg-neutral-800'}`}></div>
   )
 }
 

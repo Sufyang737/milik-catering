@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero.js';
 import Div from '../components/Div.jsx'
@@ -11,15 +12,20 @@ import Checkout from '../components/Checkout.jsx'
 
 
 export default function Home() {
-  
+  const [Theme, setTheme] = useState(true)
+
+  const handleClick = () =>{
+    setTheme(!Theme)
+  }
   return (
-    <div className='w-full bg-neutral-800'>
-      <Nav />
-      <Div />
+    <div className={`w-full ${Theme ? 'bg-neutral-800 text-white' : 'bg-slate-100 text-black'}`}>
+      <button className='fixed right-0 w-12 h-12 bg-red-500' onClick={handleClick}></button>
+      <Nav theme={Theme}/>
+      <Div theme={Theme}/>
       <Hero /> 
       <Div />
-      <Especial />
-      <DEST/>
+      <Especial theme={Theme}/>
+      <DEST theme={Theme}/>
       <Div />
       <Footer />
       <Comprar />
