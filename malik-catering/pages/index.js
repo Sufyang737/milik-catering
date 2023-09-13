@@ -28,8 +28,8 @@ export default function Home() {
       <DEST theme={Theme}/>
       <Div />
       <Footer />
-      <Comprar />
-      <Checkout/>
+      <Comprar theme={Theme}/>
+      <Checkout theme={Theme}/>
     
     </div>
   )

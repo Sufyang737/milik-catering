@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState , useEffect} from "react";
 
 
-export default function Comprar(){
+export default function Comprar(props){
   const [ProductQuantity, setProductQuantity] = useState(0);
 
 
@@ -40,7 +40,7 @@ export default function Comprar(){
         </div>
         <div className="flex flex-col gap-5">
           <p className="text-2xl font-bold">Cantidad</p>
-          <form className="w-3/5 h-8 bg-white flex items-center justify-center text-black" id="myform" action="#">
+          <form className={`w-3/5 h-8 flex items-center justify-center text-black ${props.theme ? 'bg-slate-100' : 'bg-neutral-800 text-white'}`} id="myform" action="#">
             <input
               className="cursor-pointer"
               type="button"
@@ -48,7 +48,7 @@ export default function Comprar(){
               field="quantity"
               onClick={handleClickRemove}
             />
-            <input className="w-3/5 text-center outline-0 " type="number" name="quantity" defaultValue={ProductQuantity} />
+            <input className={`w-3/5 text-center outline-0 ${props.theme ? 'bg-slate-100' : 'bg-neutral-800'}`} type="number" name="quantity" defaultValue={ProductQuantity} />
             <input
               className="cursor-pointer"
               type="button"
@@ -58,7 +58,7 @@ export default function Comprar(){
             />
           </form>
         </div>
-        <button className="w-1/3 h-12 bg-white text-2xl text-black font-bold">COMPRAR</button>
+        <button className={`w-1/3 h-12 text-2xl text-black font-bold ${props.theme ? 'bg-slate-100' : 'bg-neutral-800 text-white'}`}>COMPRAR</button>
       </div>
     </section>
   );

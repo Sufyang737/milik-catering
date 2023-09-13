@@ -51,18 +51,18 @@ const Slider = (props) => {
       <div className="h-full overflow-hidden">
         <div
           className={
-            "w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all"
+            "w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all duration-700"
           }
           ref={sliderWrap}
         >
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
+          <Product theme={props.theme}/>
         </div>
       </div>
       <button className="absolute top-1/2 -left-8" onClick={handleClickLeft}>
