@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
-const Cartprod = () => {
+const Cartprod = (props) => {
 
   const [ProductQuantity, setProductQuantity] = useState(0);
 
@@ -20,7 +20,7 @@ const Cartprod = () => {
   };
 
   return (
-    <div className="w-full h-32 flex justify-evenly items-center border-b-2">
+    <div className={`w-full h-32 flex justify-evenly items-center border-b-2 ${props.theme ? 'bordewr-slate-100' : 'border-neutral-800'}`}>
       <Image
         width={1000}
         height={1000}
@@ -32,13 +32,13 @@ const Cartprod = () => {
           Idea mix de frutas para dps de un asado
         </p>
         <form
-          className="w-1/2 h-8 bg-white flex items-center justify-center text-black font-bold"
+          className={`${props.theme ? 'bg-slate-100 text-black' : 'bg-neutral-800 text-white'} w-1/2 h-8 flex items-center justify-center font-bold`}
           id="myform"
           action="#"
         >
           <input className="cursor-pointer" type="button" defaultValue="-" field="quantity" onClick={handleClickRemove}/>
           <input
-            className="w-3/5 text-center outline-0"
+            className="w-3/5 text-center outline-0 bg-inherit"
             type="number"
             name="quantity"
             defaultValue={ProductQuantity}        

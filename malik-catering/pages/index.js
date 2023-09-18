@@ -18,19 +18,21 @@ export default function Home() {
     setTheme(!Theme)
   }
   return (
-    <div className={`w-full ${Theme ? 'bg-neutral-800 text-white' : 'bg-slate-100 text-black'}`}>
-      <button className='fixed right-0 w-12 h-12 bg-red-500' onClick={handleClick}></button>
-      <Nav theme={Theme}/>
-      <Div theme={Theme}/>
-      <Hero /> 
-      <Div />
-      <Especial theme={Theme}/>
-      <DEST theme={Theme}/>
-      <Div />
-      <Footer />
-      <Comprar theme={Theme}/>
-      <Checkout theme={Theme}/>
-    
+    <div className={`${Theme ? 'dark' : ' '}`}>
+      <div className={`w-full dark:bg-neutral-800 dark:text-white bg-slate-100 text-black`}>
+        <button className='fixed right-0 w-12 h-12 bg-red-500' onClick={handleClick}></button>
+        <Nav />
+        <Div />
+        <Hero /> 
+        <Div />
+        <Especial />
+        <DEST />
+        <Div />
+        <Footer />
+        <Comprar />
+        <Checkout />
+      
+      </div>
     </div>
   )
 }

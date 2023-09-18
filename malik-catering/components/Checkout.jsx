@@ -13,7 +13,7 @@ const Checkout = (props) => {
           <li className='border-b-2 flex justify-between text-xl py-2'>Subtotal <span>$0</span></li>
           <li className='flex justify-between font-bold text-3xl py-6'>Total <span>$0</span></li>
         </ul>
-        <button className={`p-4 text-sm font-bold ${props.theme ? 'bg-slate-200 text-black' : 'bg-neutral-800 text-white'}`}>FINALIZAR COMPRA</button>
+        <button className={`p-4 text-sm font-bold ${props.theme ? 'bg-slate-200 text-black' : 'bg-neutral-800 text-whitenp'}`}>FINALIZAR COMPRA</button>
       </div>
       
     </section>
