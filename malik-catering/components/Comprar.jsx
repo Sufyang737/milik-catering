@@ -40,7 +40,7 @@ export default function Comprar(props){
         </div>
         <div className="flex flex-col gap-5">
           <p className="text-2xl font-bold">Cantidad</p>
-          <form className={`w-3/5 h-8 flex items-center justify-center text-black ${props.theme ? 'bg-slate-100' : 'bg-neutral-800 text-white'}`} id="myform" action="#">
+          <form className={`w-3/5 h-8 flex items-center justify-center dark:text-black dark:bg-slate-100 bg-neutral-800 text-white`} id="myform" action="#">
             <input
               className="cursor-pointer"
               type="button"
@@ -48,7 +48,7 @@ export default function Comprar(props){
               field="quantity"
               onClick={handleClickRemove}
             />
-            <input className={`w-3/5 text-center outline-0 ${props.theme ? 'bg-slate-100' : 'bg-neutral-800'}`} type="number" name="quantity" defaultValue={ProductQuantity} />
+            <input className={`w-3/5 text-center outline-0 dark:bg-slate-100 bg-neutral-800`} type="number" name="quantity" defaultValue={ProductQuantity} />
             <input
               className="cursor-pointer"
               type="button"
@@ -58,7 +58,7 @@ export default function Comprar(props){
             />
           </form>
         </div>
-        <button className={`w-1/3 h-12 text-2xl text-black font-bold ${props.theme ? 'bg-slate-100' : 'bg-neutral-800 text-white'}`}>COMPRAR</button>
+        <button className={`w-1/3 h-12 text-2xl dark:text-black font-bold dark:bg-slate-100 bg-neutral-800 text-white`}>COMPRAR</button>
       </div>
     </section>
   );

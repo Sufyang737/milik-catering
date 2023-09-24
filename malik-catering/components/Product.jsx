@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const PRODUCT = (props) => {
   return (
-    <div className={`w-5/6 h-full border-4 ${props.theme ? 'bg-neutral-900 border-white' : 'bg-slate-200 border-black'}`}>
+    <div className={`w-5/6 h-full border-4 dark:bg-neutral-900 dark:border-white bg-slate-200 border-black`}>
       <Image src='/../public/assets/img/Rectangle37.png' width={1000} height={1000} className='h-3/4 w-full ' alt="Picture of the author"/>
       <div className='h-1/4 w-full px-4 flex justify-between items-center'>
         <div className='flex flex-col justify-between items-center'>

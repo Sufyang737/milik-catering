@@ -55,14 +55,14 @@ const Slider = (props) => {
           }
           ref={sliderWrap}
         >
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
-          <Product theme={props.theme}/>
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
         </div>
       </div>
       <button className="absolute top-1/2 -left-8" onClick={handleClickLeft}>

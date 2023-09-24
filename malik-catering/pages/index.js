@@ -21,7 +21,7 @@ export default function Home() {
     <div className={`${Theme ? 'dark' : ' '}`}>
       <div className={`w-full dark:bg-neutral-800 dark:text-white bg-slate-100 text-black`}>
         <button className='fixed right-0 w-12 h-12 bg-red-500' onClick={handleClick}></button>
-        <Nav />
+        <Nav theme={Theme}/>
         <Div />
         <Hero /> 
         <Div />

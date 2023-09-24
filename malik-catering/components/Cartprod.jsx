@@ -20,7 +20,7 @@ const Cartprod = (props) => {
   };
 
   return (
-    <div className={`w-full h-32 flex justify-evenly items-center border-b-2 ${props.theme ? 'bordewr-slate-100' : 'border-neutral-800'}`}>
+    <div className={`w-full h-32 flex justify-evenly items-center border-b-2 dark:border-slate-100 border-neutral-800`}>
       <Image
         width={1000}
         height={1000}

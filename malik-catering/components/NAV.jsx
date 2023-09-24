@@ -37,7 +37,7 @@ const Nav = (props) => {
       </div>
       <nav className='px-36 w-full h-3/5 flex justify-between items-center'>
         <h1 className=''>MALIK</h1>
-        <ul className={`${props.theme ? 'bg-slate-100 text-black' : 'bg-neutral-800 text-white'} w-96 px-3 py-2 rounded-2xl flex flex-row items-center justify-center gap-4 font-bold`}>
+        <ul className={`dark:bg-slate-100 dark:text-black bg-neutral-800 text-white w-96 px-3 py-2 rounded-2xl flex flex-row items-center justify-center gap-4 font-bold`}>
           <li className=''><a href="#">mercadito</a></li>
           <li className=''><a href="#">armá tu box</a></li>
           <li className=''><a href="#">box-armados</a></li>
