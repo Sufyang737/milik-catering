@@ -1,5 +1,5 @@
 import React from "react";
-import CheckoutCard from "../components/CheckoutCard";
+import CheckoutCard from "../components/checkoutCard";
 
 const Checkout = (props) => {
   return (

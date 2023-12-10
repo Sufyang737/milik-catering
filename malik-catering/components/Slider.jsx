@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
 import Product from "./Product";
 
-const Slider = (props) => {
-  const [sliderCount, setSliderCount] = useState(0);
-  
+export default function Slider({ product }) {
+  if (!Array.isArray(product)) {
+    return null;
+  }
 
+  const [sliderCount, setSliderCount] = useState(0);
   const sliderWrap = useRef();
 
   const handleClickRight = () => {
@@ -30,39 +32,19 @@ const Slider = (props) => {
       setSliderCount(0);
     }
   };
-  // const handleClickRight = ()=>{
-  //   if (sliderCount > 1 ){
-  //     sliderPercent = 0
-  //     sliderCount = 0
-  //   }else {
-  //     sliderPercent = sliderPercent + 15
-  //     sliderCount = sliderCount + 1
-  //   }
-  //   console.log(sliderPercent)
-  // }
-
-  // const handleClickLeft = ()=>{
-  //   setTranslate()
-  //   sliderCount--
-  // }
 
   return (
     <div className="relative h-full">
       <div className="h-full overflow-hidden">
-        <div
-          className={
-            "w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all duration-700"
-          }
-          ref={sliderWrap}
-        >
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+        <div className={"w-[200%] h-full mx-10 grid grid-flow-col auto-cols-auto gap-1 transition-all"} ref={sliderWrap}>
+          {product.map((product) => (
+            <Product
+              key={product._id}
+              images={product.images}
+              title={product.title}
+              price={product.price}
+            />
+          ))}
         </div>
       </div>
       <button className="absolute top-1/2 -left-8" onClick={handleClickLeft}>
@@ -100,5 +82,3 @@ const Slider = (props) => {
     </div>
   );
 };
-
-export default Slider;
