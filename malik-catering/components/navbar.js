@@ -2,16 +2,35 @@ import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Cart from "./Cart.jsx";
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Navbar(props) {
   const [open, setOpen] = useState(false);
-  const [Menu, setMenu] = React.useState(false);
+  const [Menu, setMenu] = useState(false);
   const [SearchbarStyle, setSearchbarStyle] = useState(false);
   const [Navtranslate, setNavtranslate] = useState(false);
+  const [showFirstMessage, setShowFirstMessage] = useState(true);
+  const controls = useAnimation();
 
   const handleClick = () => {
     setMenu(!Menu);
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setShowFirstMessage((prevShowFirstMessage) => !prevShowFirstMessage);
+      setTimeout(() => {
+        setNavtranslate(!Navtranslate);
+      }, 2000); // Tiempo para mostrar el segundo mensaje después de 2 segundos
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [Navtranslate]);
+
+  useEffect(() => {
+    controls.start({ y: Navtranslate ? 0 : '200%' });
+  }, [Navtranslate, controls]);
+
 
   const handleSearchClick = () => {
     setSearchbarStyle(!SearchbarStyle);
@@ -45,9 +64,28 @@ export default function Navbar(props) {
       </>
     );
   }
-
   return (
     <div className="relative ">
+      <div className='bg-green-500 w-full h-2/5 overflow-hidden flex items-center justify-center'>
+        <motion.div
+          animate={controls}
+          initial={{ y: '200%' }}
+          transition={{ duration: 1 }}
+          className='flex flex-col items-center'
+        >
+          {showFirstMessage && (
+            <p className='flex transition-all duration-1000 overflow-hidden'>
+              Entregas de <strong>lunes a sábado</strong>
+            </p>
+          )}
+          {!showFirstMessage && (
+            <p className='flex transition-all duration-1000 overflow-hidden'>
+              <strong>20%</strong> de descuento a partir de <strong>$20000</strong>
+            </p>
+          )}
+        </motion.div>
+      </div>
+
       {open && (
         <div
           className="fixed top-0 left-0 z-[70] w-full h-full bg-black opacity-50"
