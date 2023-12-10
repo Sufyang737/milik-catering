@@ -31,7 +31,7 @@ export default function Navbar(props) {
       </Link>
       <Link
         href={href}
-        className={`text-xl text-zinc-100 font-bold hover:border-b-2 tablet:text-[16px] phone:text-lg`}
+        className={`text-xl text-zinc-100 font-bold scale-100 hover:scale-125 tablet:text-[16px] phone:text-lg transition-transform`}
       >
         {label}
       </Link>
@@ -54,23 +54,23 @@ export default function Navbar(props) {
           onClick={() => setOpen(false)}
         ></div>
       )}
-      <div className="navcolor flex items-center justify-between px-4 bg-red-500 ">
+      <div className="navcolor flex items-center justify-between px-4 ">
         <div
           className="m-4 p-4 cursor-pointer hover:rounded-full hover:bg-yellow-500 transition-all duration-[150] tablet:m-4 tablet:p-3 phone:m-3 phone:p-3"
           onClick={() => setOpen(!open)}
         >
           <svg
-            className="h-5 w-5 text-zinc-100 tablet:w-4 tablet:h-4 phone:w-4 phone:h-4"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
+            strokeWidth={1.5}
             stroke="currentColor"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h7"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
         </div>
