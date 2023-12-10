@@ -54,7 +54,7 @@ export default function Navbar(props) {
           onClick={() => setOpen(false)}
         ></div>
       )}
-      <div className="navcolor grid grid-flow-col items-center justify-between px-4 bg-red-500 ">
+      <div className="navcolor flex items-center justify-between px-4 bg-red-500 ">
         <div
           className="m-4 p-4 cursor-pointer hover:rounded-full hover:bg-yellow-500 transition-all duration-[150] tablet:m-4 tablet:p-3 phone:m-3 phone:p-3"
           onClick={() => setOpen(!open)}
@@ -80,7 +80,6 @@ export default function Navbar(props) {
           <h1 className="">MALIK</h1>
         </div>
         {/*----------------------------------------------------------------------------------------------*/}
-
         <div className="flex flex-row justify-center gap-16">
           <div className="search-box relative">
             <input
@@ -137,10 +136,6 @@ export default function Navbar(props) {
             </button>
             <Cart display={Menu} theme={props.theme} />
           </div>
-        </div>
-
-        <div className="flex items-center m-4 phone:hidden">
-          <User />
         </div>
       </div>
       <div
