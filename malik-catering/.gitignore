@@ -1,0 +1,13 @@
+# .gitignore
+.next/
+node_modules/
+.next/cache/
+.next/cache/images/
+.next/cache/webpack/
+.next/static/
+.next/server/
+.next/trace/
+node_modules/
+.next/
+.swc/
+.*.env
