@@ -2,13 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Cart from "./Cart.jsx";
+import { useTheme, ThemeProvider } from "../context/ThemeContext.js";
+
 
 export default function Navbar(props) {
   const [open, setOpen] = useState(false);
   const [Menu, setMenu] = React.useState(false);
   const [SearchbarStyle, setSearchbarStyle] = useState(false);
   const [Navtranslate, setNavtranslate] = useState(false);
-
+  const { theme, toggleTheme } = useTheme();
   const handleClick = () => {
     setMenu(!Menu);
   };
@@ -136,6 +138,19 @@ export default function Navbar(props) {
             </button>
             <Cart display={Menu} theme={props.theme} />
           </div>
+          <label className="ui-switch">
+            <input
+              type="checkbox"
+              onChange={toggleTheme}
+            />
+            <div
+              className={`slider ${theme === "light" ? "light-slider" : "dark-slider"}`}
+            >
+              <div
+                className={`circle ${theme === "light" ? "light-circle" : "dark-circle"}`}
+              ></div>
+            </div>
+          </label>
         </div>
       </div>
       <div
