@@ -23,13 +23,15 @@ export default function PRODUCT(
         alt="..."
       />
       <div className="h-1/4 w-full px-4 flex justify-between items-center">
-        <div className="flex flex-col justify-between items-center">
+        <div className="flex flex-col justify-between items-start">
           <span>
             <Link href={url}>{title}</Link>
           </span>
           <span>${price}</span>
         </div>
-        <button>+</button>
+        <button className="hover:bg-slate-200 hover:text-black rounded-full w-6">
+          +
+        </button>
       </div>
     </div>
   );

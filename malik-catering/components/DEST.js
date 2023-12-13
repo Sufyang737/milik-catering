@@ -8,7 +8,7 @@ export default function Dest({ product }) {
       <div className="w-3/4 flex flex row justify-between items-center">
         <h3>PRODUCTOS DESTACADOS</h3>
         <button>
-          <Link href={"/product"}>VER MÁS</Link>
+          <Link href={"/products"}>VER MÁS</Link>
         </button>
       </div>
       <div className="h-full w-3/4">
